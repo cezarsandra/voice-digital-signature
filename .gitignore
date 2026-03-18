@@ -1,0 +1,17 @@
+
+__pycache__/
+*.pyc
+*.pyo
+
+# Signatures output
+signatures/
+*.npy
+*_meta.json
+
+# Audio files
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+*.opus
