@@ -1,0 +1,7 @@
+Cython
+packaging
+nemo_toolkit[asr]
+omegaconf
+soundfile
+numpy
+torch
