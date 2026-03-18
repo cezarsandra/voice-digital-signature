@@ -37,11 +37,11 @@ help:
 # Virtual environment
 # ----------------------------------------------------------------------------
 
-$(VENV)/bin/activate:
+$(VENV)/bin/pip:
 	python3 -m venv $(VENV)
 	$(PIP) install --upgrade pip
 
-venv: $(VENV)/bin/activate
+venv: $(VENV)/bin/pip
 
 # ----------------------------------------------------------------------------
 # Instalare
