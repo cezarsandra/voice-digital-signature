@@ -211,7 +211,15 @@ def main() -> None:
 
     device = args.device
     if device is None:
-        device = "cuda" if torch.cuda.is_available() else "cpu"
+        if torch.cuda.is_available():
+            try:
+                torch.zeros(1).cuda()
+                device = "cuda"
+            except RuntimeError:
+                print("Warning: CUDA disponibil dar incompatibil cu GPU-ul curent — folosim CPU.", file=sys.stderr)
+                device = "cpu"
+        else:
+            device = "cpu"
     print(f"Device: {device}")
 
     AUDIO_EXTENSIONS = {".mp3", ".wav", ".flac", ".m4a", ".ogg", ".opus"}

@@ -52,6 +52,7 @@ install-sys:
 
 install: venv
 	$(PIP) install Cython packaging
+	$(PIP) install torch --index-url https://download.pytorch.org/whl/cu118
 	$(PIP) install -r requirements.txt
 
 setup: install-sys install
